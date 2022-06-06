@@ -25,5 +25,42 @@ uma nota de 5 e quatro notas de 1.
 """
 
 
+def substitui_ultimo(s, old, new, occurrence):
+    li = s.rsplit(old, occurrence)
+    return new.join(li)
+
+def trata_string(numero, unidade):
+    retorno = ''
+    if numero == 1:
+        retorno = f'1 nota de R$ {unidade}'
+    elif numero > 1:
+        retorno = f'{numero} notas de R$ {unidade}'
+    return retorno
+
+
 def calcular_troco(valor: int) -> str:
     """Escreva aqui em baixo a sua solução"""
+    # 1, 5, 10, 50 e 100 reais
+
+    valor_aux = valor
+    notas_100, valor_aux = divmod(valor_aux, 100)
+    notas_50, valor_aux = divmod(valor_aux, 50)
+    notas_10, valor_aux = divmod(valor_aux, 10)
+    notas_5, valor_aux = divmod(valor_aux, 5)
+    notas_1, valor_aux = divmod(valor_aux, 1)
+
+    result_array = [notas_100, notas_50, notas_10, notas_5, notas_1]
+    notas_array = ['100', '50', '10', '5', '1']
+    result_string = ''
+
+
+    for i in range(len(result_array)):
+        nota = result_array[i]
+        if (nota) is not None and nota > 0:
+            result_string += trata_string(result_array[i], notas_array[i])
+            if i < 4 and sum(result_array) > 1:
+                result_string += ', '
+
+
+    result_string = substitui_ultimo(result_string, ', ', ' e ', 1)
+    print(f"'{result_string}'")
