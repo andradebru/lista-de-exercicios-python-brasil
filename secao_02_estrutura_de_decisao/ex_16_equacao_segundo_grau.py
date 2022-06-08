@@ -36,7 +36,7 @@ def resolver_equacao_do_segundo_grau(a: float, b: float, c: float):
         elif delta < 0:
             raiz = -b / (2 * a)
             print(f"'Delta negativo ({delta}), por isso não existem raízes reais'")
-        
+
         else:
             raiz_1 = (-b + math.sqrt(delta)) / (2 * a)
             raiz_2 = (-b - math.sqrt(delta)) / (2 * a)
