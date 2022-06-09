@@ -121,7 +121,10 @@ def gerar_tabela_de_precos(preco_por_pao: float):
     """Escreva aqui em baixo a sua solução"""
     paes = 1 #qtde de pao
 
+    print(f'Preço do pão: R$  {preco_por_pao}')
+    print('Panificadora Pão de Ontem - Tabela de preços')
+
     while paes <= 50:
         preco_total = paes * preco_por_pao
-        print(f'{paes} - R$ {preco_total:.2f}')
+        print(f'{paes}'.ljust(2), f'- R${preco_total:7.2f}')
         paes += 1
