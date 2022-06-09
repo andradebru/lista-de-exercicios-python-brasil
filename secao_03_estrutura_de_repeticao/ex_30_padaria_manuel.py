@@ -119,3 +119,9 @@ até 50 pães, a partir do preço do pão informado pelo usuário
 
 def gerar_tabela_de_precos(preco_por_pao: float):
     """Escreva aqui em baixo a sua solução"""
+    paes = 1 #qtde de pao
+
+    while paes <= 50:
+        preco_total = paes * preco_por_pao
+        print(f'{paes} - R$ {preco_total:.2f}')
+        paes += 1

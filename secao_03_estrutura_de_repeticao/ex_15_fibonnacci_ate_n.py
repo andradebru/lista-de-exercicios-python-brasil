@@ -28,6 +28,7 @@ def calcular_serie_de_fibonacci(n: int) -> str:
     a, b = 1, 1
     x = 1
 
+    print("'", end='')
     while a < n:
         print(a, end=', ')
         y = a + b
