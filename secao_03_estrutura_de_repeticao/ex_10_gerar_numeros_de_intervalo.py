@@ -19,11 +19,12 @@ def calcular_numeros_no_intervalo(inicio: int, fim: int) -> str:
 
     i = inicio
     j = fim
-
+    print("'", end='')
     if i > j:
-        print("''")
+        print("'")
     else:
-        while i < j:
+        while i < j-1:
             print(i, end=", ")
             i += 1
-
+        else:
+            print(i, end="'")
