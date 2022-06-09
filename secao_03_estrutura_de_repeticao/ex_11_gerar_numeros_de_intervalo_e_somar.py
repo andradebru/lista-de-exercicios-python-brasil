@@ -21,6 +21,7 @@ def calcular_numeros_no_intervalo_e_somar(inicio: int, fim: int) -> str:
 
     i = inicio
     j = fim
+    soma = #como faz pra somar tds os numeros anteriores jesus
 
     if i > j:
         print("'Sequência: vazia. Soma: 0'")
@@ -31,4 +32,4 @@ def calcular_numeros_no_intervalo_e_somar(inicio: int, fim: int) -> str:
                 print(i, end=', ')
                 i += 1
             elif i == j:
-                print(i, ". Soma: '")
+                print(i, f". Soma: {soma}'")

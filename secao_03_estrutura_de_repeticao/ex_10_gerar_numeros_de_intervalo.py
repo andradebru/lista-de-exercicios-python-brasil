@@ -24,6 +24,6 @@ def calcular_numeros_no_intervalo(inicio: int, fim: int) -> str:
         print("''")
     else:
         while i < j:
-            print(i, end=', ')
+            print(i, end=", ")
             i += 1
 
