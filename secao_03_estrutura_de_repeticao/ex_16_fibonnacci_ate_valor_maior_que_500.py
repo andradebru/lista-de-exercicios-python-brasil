@@ -15,6 +15,8 @@ def calcular_serie_de_fibonacci_ate_valor_ser_maior_que_500() -> str:
     a, b = 0, 1
     x = 0
 
+    print("'", end='')  #gambi pra colocar o ' no inicio do print
+
     while a < 610:
         print(a, end=', ')
         y = a + b
