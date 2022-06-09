@@ -30,3 +30,5 @@ Faça um programa que calcule o valor de H com N termos.
 
 def soma_serie(n):
     """Escreva aqui em baixo a sua solução"""
+    soma = sum(1/denominador for denominador in range(1, n+1))
+    print(f'H = {soma}')

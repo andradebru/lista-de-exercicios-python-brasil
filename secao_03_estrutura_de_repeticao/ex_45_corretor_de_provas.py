@@ -49,3 +49,18 @@ Gabarito da Prova:
 
 def corrigir(*provas):
     """Escreva aqui em baixo a sua solução"""
+    acertos = 0
+    # alunos = 0
+    # maior_nota = (sort(provas))
+
+    for resposta in provas:
+        acertos += 1
+        print (resposta)
+        # print()
+        print(acertos)
+
+
+
+        # Maior e Menor Acerto;
+        # Total de Alunos que utilizaram o sistema;
+        # A Média das Notas da Turma com uma casa decimal.

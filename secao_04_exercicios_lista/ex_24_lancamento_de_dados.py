@@ -37,3 +37,11 @@ Mostre na tela:
 
 def lancar_dados(*valor_lancamentos):
     """Escreva aqui em baixo a sua solução"""
+    total_de_lancamentos = len(valor_lancamentos)
+    contagem_de_frequencia = Counter(valor_lancamentos)
+    print(f'O dado foi lançado {total_de_lancamentos} vezes')
+    for face_do_dado, frequencia in contagem_de_frequencia.items():
+        print(f'O número 2 caiu 11 vezes')
+    elemento = contagem_de_frequencia.most_common()
+        print(face_do_dado, frequencia)
+        print(f'    O lado com o número {face_do_dado} caiu mais vezes ({frequencia} vezes)')
