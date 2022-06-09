@@ -53,6 +53,36 @@ para registrar a próxima compra.
 
 """
 
+def printa_compra(total, dinheiro, troco):
+    print('Lojas Tabajara')
+    print(f'Total     : R$   {total:.2f}')
+    print(f'Dinheiro  : R$   {dinheiro:.2f}')
+    print(f'Troco     : R$   {troco:.2f}')
+    print('-------------------')
+    print('Programa encerrado!')
 
 def rodar_programa_de_caixa():
     """Escreva aqui em baixo a sua solução"""
+    lista_produtos = []
+    dinheiro = 0
+    total = 0
+
+    while True:
+        produto = input('Digite: ')
+        lista_produtos.append(produto)
+
+        if produto == '-1' and len(lista_produtos) == 0:
+            print('Lojas Tabajara')
+            print('-------------------')
+            print('Programa encerrado!')
+            break
+
+        if produto == '0' or produto == '-1':
+            dinheiro = input()
+            break
+
+    for produto in lista_produtos:
+        total += produto
+
+    troco = dinheiro - total
+    printa_compra(total, dinheiro, troco)
