@@ -46,17 +46,21 @@ def cadastrar_usuario(nome: str, idade: int, salario: float, sexo: str, estado_c
     # salario = float(input('Salario: '))
     # sexo = input('Sexo: ').lower()
     # estado_civil = input('Estado civil: ').lower()
-
-    if len(nome) <= 3:
-        print(f'Erro: o nome precisa ter 3 letras ou mais, não pode ser {nome}')
+    if len(nome) >= 3 and 0 < idade < 150 and 0 < salario and sexo in ('m', 'f') and estado_civil in ['s','c','v','d']:
+        print('Cadastro realizado com sucesso')
     else:
-        if 0 > idade > 150:
+        while len(nome) < 3:
+            print(f'Erro: o nome precisa ter 3 letras ou mais, não pode ser {nome}')
+            break
+        while idade < 0 or idade > 150:
             print(f'Erro: a idade precisa estar entre 0 e 150, não pode ser {idade}')
-        elif 0 >= salario:
+            break
+        while 0 >= salario:
             print(f'Erro: o salário precisa ser positivo, não pode ser {salario}')
-        elif sexo != 'm' or sexo != 'f':
-            print(f'Erro: o sexo precisa ser "m" ou "f", não pode ser "{sexo}"') #meio datado ne...
-        elif estado_civil not in ['s', 'c', 'v', 'd']:
+            break
+        while sexo not in ['m', 'f']:
+            print(f'Erro: o sexo precisa ser "m" ou "f", não pode ser "{sexo}"')
+            break#meio datado ne...
+        while estado_civil not in ['s', 'c', 'v', 'd']:
             print(f'Erro: o estado civil precisa ser "s", "c", "v" ou "d", não pode ser "{estado_civil}"')
-        else:
-            print('Cadastro realizado com sucesso')
+            break

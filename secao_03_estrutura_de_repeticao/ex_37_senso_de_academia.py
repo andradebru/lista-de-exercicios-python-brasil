@@ -56,3 +56,33 @@ da média das alturas e dos pesos dos clientes
 
 def rodar_senso():
     """Escreva aqui em baixo a sua solução"""
+    # cadastro = [
+    #     ["Renzo", "162", 81],
+    #     ['Gigante', 192, 80],
+    #     ['Bolota', 170, 150],
+    #     ['Seco', 172, 50],
+    # ]
+    #
+    # def imprimir(cadastro):
+    #     for (nome, altura, peso) in cadastro:
+    #         print(altura)
+    #
+    # def descobrir_mais_alto_e_baixo(cadastro):
+    #     cliente_mais_alto = 0
+    #     for (nome, altura, peso) in cadastro:
+    #         if altura > cliente_mais_alto:
+    #             cliente_mais_alto = altura
+    #     print(cliente_mais_alto)
+    #
+    # print(f'Cliente mais alto: {cliente_mais_alto}, com {maior_altura} centímetros')
+    # print(f'Cliente mais baixo: {cliente_mais_baixo}, com {menor_altura} centímetros')
+    # print(f'Cliente mais magro: {cliente_menor_magro}, com {menor_peso} kilos')
+    # print(f'Cliente mais gordo: Bolota, {cliente_maior_peso} 150 kilos')
+    # print('--------------------------------------------------')
+    # print(f'Media de altura dos clientes: {media_altura:.1f} centímetros')
+    # print(f'Media de peso dos clientes: {media_peso:.1f} kilos')
+
+# def imprimir(cadastro):
+#     for (nome, altura, peso) in cadastro:
+#         print(altura)
+

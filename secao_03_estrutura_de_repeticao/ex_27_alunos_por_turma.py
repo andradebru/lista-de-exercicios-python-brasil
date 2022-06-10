@@ -36,3 +36,13 @@ Arredonde o valor da média para baixo.
 
 def calcular_media_de_alunos_por_turma():
     """Escreva aqui em baixo a sua solução"""
+    n_turmas = int(input())
+    alunos = int(input())
+    media_alunos_turma = floor(alunos / n_turmas)
+
+    while 0 < alunos < 40:
+        print(f'Número de turmas: {n_turmas}')
+        print(f'Média de alunos por turma: {media_alunos_turma}')
+    else:
+        print(f'Uma turma deve ter de 1 a 40 alunos, não é possível ter {alunos} alunos')
+

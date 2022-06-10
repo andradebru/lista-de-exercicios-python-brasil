@@ -41,6 +41,7 @@ def calcular_fatorial(n: int) -> int:
         contador += 1
         if n <= 16:
             print(resultado)
+
         else:
             print(f"'Apenas valores positivos, inteiros e menores que 16 são válidos. Não é possível calcular para {n}'")
 

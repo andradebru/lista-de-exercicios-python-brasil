@@ -33,4 +33,4 @@ def calcular_fatorial(n: int):
         resultado *= contador
         contador += 1
 
-    print(resultado)
+    print(f'Fatorial de {n}:\n{n}! = {n} . {n-1} . {n-2} . {n-3} = {resultado}')
