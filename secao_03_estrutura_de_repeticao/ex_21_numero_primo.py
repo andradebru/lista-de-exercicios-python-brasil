@@ -40,15 +40,14 @@ divisível somente por ele mesmo e por 1.
 def eh_primo(n: int) -> bool:
     """Escreva aqui em baixo a sua solução"""
     contador = 0
-    i = 0
+    multiplos = 0
 
-    while i <= n or contador < 2:
-        i = i + 1
-        x = n % i
-        if x == 0:
-            contador += 1
-
-    if contador <= 2:
-        print(True)
-    else:
-        print(False)
+    for contador in range(2, n):
+        if n % contador == 0:
+            multiplos += 1
+        if multiplos == 0:
+            print(True)
+            return
+        else:
+            print(False)
+            return
