@@ -50,14 +50,23 @@ Gabarito da Prova:
 def corrigir(*provas):
     """Escreva aqui em baixo a sua solução"""
     acertos = 0
-    # alunos = 0
+    total_alunos = 0
     # maior_nota = (sort(provas))
 
     for resposta in provas:
+        print(f'Aluno                 Nota)
+        print(f'{nome}                 {nota}')
+        print('---------------------------')
+        print(f'Média geral: {media_geral:.2f})
+        print(f'Maior nota: {maior_nota}')
+        print(f'Menor nota: {menor_nota}'
+        print(f'Total de Alunos: {total_alunos}')
         acertos += 1
-        print (resposta)
-        # print()
-        print(acertos)
+
+
+        # print (resposta)
+        # # print()
+        # print(acertos)
 
 
 

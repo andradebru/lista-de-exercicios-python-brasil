@@ -109,3 +109,33 @@ comprados.
 
 def fechar_conta(*itens):
     """Escreva aqui em baixo a sua solução"""
+    codigo = itens[0]
+    qtd = itens[1]
+    qtd_final = 0
+    valor_total = 0
+
+    for qtd in itens:
+        qtd_final += 1
+
+    for codigo in items:
+        if codigo == 100:
+            valor_total += 1.2
+        if codigo == 101:
+            valor_total += 1.3
+        if codigo == 102:
+            valor_total += 1.5
+        if codigo == 103:
+            valor_total += 1.2
+        if codigo == 104:
+            valor_total += 1.3
+        if codigo == 105:
+            valor_total += 1.0
+
+    print('_____________________________________________________________________________')
+    print('|                              RESUMO DA CONTA                              |')
+    print('|---------------------------------------------------------------------------|')
+    print('| Epecificação     | Código | Preço Unitário (R$) | Quantidade | Total (R$) |')
+    print(f'| Cachorro Quente  | {codigo}    | 1.20                |          {qtd} |       {preco:.2f} |')
+    print('|---------------------------------------------------------------------------|')
+    print(f'| Total Geral:                                    |          {qtd_final} |       {valor_total:.2f} |')
+    print('_____________________________________________________________________________')

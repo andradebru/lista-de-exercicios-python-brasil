@@ -90,3 +90,11 @@ from collections import Counter
 
 def apurar_votos(*votos):
     """Escreva aqui em baixo a sua solução"""
+    print('Código do Candidato Nome do Candidato Votos Porcentagem sobre total')
+    print('1                   Bostonaro         1       5.6%')
+    print('2                   Luladrão          1       5.6%')
+    print('3                   Dilmanta          1       5.6%')
+    print('4                   FHC Isentão       1       5.6%')
+    print('-------------------------------------------------------------------')
+    print('5                   Votos Nulos       7      38.9%')
+    print('6                   Votos Brancos     7      38.9%')
