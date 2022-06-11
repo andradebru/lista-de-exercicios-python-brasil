@@ -48,4 +48,6 @@ def eh_primo(n: int) -> bool:
                 return False
         else:
             return True
+    else:
+        return True
 
