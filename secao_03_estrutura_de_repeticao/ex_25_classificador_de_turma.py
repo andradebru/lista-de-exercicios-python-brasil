@@ -24,7 +24,6 @@ Mostre a média de idade com uma casa decimal.
 
 def classifcar_turma(*idades) -> str:
     """Escreva aqui em baixo a sua solução"""
-
     soma_idades = 0
 
     for idade in idades:
