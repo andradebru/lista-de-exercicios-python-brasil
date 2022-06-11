@@ -113,36 +113,18 @@ def apurar_votos(*votos):
         if voto == '6':
             qtd_votos_6 += 1
 
-    if qtd_votos_1 != 0:
-        porcentagem_sobre_total_1 = votos_total / qtd_votos_1
-    else:
-        porcentagem_sobre_total_1 = 0
-    if qtd_votos_2 != 0:
-        porcentagem_sobre_total_2 = votos_total / qtd_votos_2
-    else:
-        porcentagem_sobre_total_1 = 0
-    if qtd_votos_3 != 0:
-        porcentagem_sobre_total_3 = votos_total / qtd_votos_3
-    else:
-        porcentagem_sobre_total_1 = 0
-    if qtd_votos_4 != 0:
-        porcentagem_sobre_total_4 = votos_total / qtd_votos_4
-    else:
-        porcentagem_sobre_total_1 = 0
-    if qtd_votos_5 != 0:
-        porcentagem_sobre_total_5 = votos_total / qtd_votos_5
-    else:
-        porcentagem_sobre_total_1 = 0
-    if qtd_votos_6 != 0:
-        porcentagem_sobre_total_6 = votos_total / qtd_votos_6
-    else:
-        porcentagem_sobre_total_1 = 0
+        porcentagem_sobre_total_1 = qtd_votos_1*100 / votos_total
+        porcentagem_sobre_total_2 = qtd_votos_2*100 / votos_total
+        porcentagem_sobre_total_3 = qtd_votos_3*100 / votos_total
+        porcentagem_sobre_total_4 = qtd_votos_4*100 / votos_total
+        porcentagem_sobre_total_5 = qtd_votos_5*100 / votos_total
+        porcentagem_sobre_total_6 = qtd_votos_6*100 / votos_total
 
     print(f'Código do Candidato Nome do Candidato Votos Porcentagem sobre total')
-    print(f'1                   Bostonaro         {qtd_votos_1}      {porcentagem_sobre_total_1:.1f}%')
-    print(f'2                   Luladrão          {qtd_votos_2}      {porcentagem_sobre_total_2:.1f}%')
-    print(f'3                   Dilmanta          {qtd_votos_3}      {porcentagem_sobre_total_3:.1f}%')
-    print(f'4                   FHC Isentão       {qtd_votos_4}      {porcentagem_sobre_total_4:.1f}%')
+    print(f'1                   Bostonaro         {qtd_votos_1}      {porcentagem_sobre_total_1:4.1f}%')
+    print(f'2                   Luladrão          {qtd_votos_2}      {porcentagem_sobre_total_2:4.1f}%')
+    print(f'3                   Dilmanta          {qtd_votos_3}      {porcentagem_sobre_total_3:4.1f}%')
+    print(f'4                   FHC Isentão       {qtd_votos_4}      {porcentagem_sobre_total_4:4.1f}%')
     print('-------------------------------------------------------------------')
-    print(f'5                   Votos Nulos       {qtd_votos_5}      {porcentagem_sobre_total_5:.1f}%')
-    print(f'6                   Votos Brancos     {qtd_votos_6}      {porcentagem_sobre_total_6:.1f}%')
+    print(f'5                   Votos Nulos       {qtd_votos_5}      {porcentagem_sobre_total_5:4.1f}%')
+    print(f'6                   Votos Brancos     {qtd_votos_6}      {porcentagem_sobre_total_6:4.1f}%')
