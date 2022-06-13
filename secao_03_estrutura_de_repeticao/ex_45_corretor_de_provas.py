@@ -45,31 +45,38 @@ Gabarito da Prova:
     Menor nota: 9
     Total de Alunos: 2
 """
-
+def calcular_nota(prova):
+    gabarito = ('Nome','A','B','C','D','E','E','D','C','B','A')
+    nome_do_aluno = prova[0]
+    total_da_nota = 0
+    nome_do_aluno = ''
+    for resposta_correta, nota_prova in zip(gabarito, prova):
+        if resposta_correta == 'Nome':
+            nome_do_aluno = prova[0]
+        elif resposta_correta == nota_prova:
+            total_da_nota += 1
+    return nome_do_aluno, total_da_nota
 
 def corrigir(*provas):
     """Escreva aqui em baixo a sua solução"""
-    acertos = 0
-    total_alunos = 0
-    # maior_nota = (sort(provas))
+    print('Aluno                 Nota')
+    soma_notas = 0
+    nota_minima = 99999
+    nota_maxima = -1
+    media_geral = soma_notas / len(provas)
 
-    for resposta in provas:
-        print(f'Aluno                 Nota)
-        print(f'{nome}                 {nota}')
+    for prova in provas:
+        nome_do_aluno, total_da_nota = calcular_nota(prova)
+        soma_notas += total_da_nota
+        if total_da_nota > nota_maxima:
+            nota_maxima = total_da_nota
+        if total_da_nota < nota_minima:
+            nota_minima = total_da_nota
+
+        # print(nome_do_aluno, total_da_nota)
+        print(f'{nome_do_aluno}                 {total_da_nota}')
         print('---------------------------')
-        print(f'Média geral: {media_geral:.2f})
-        print(f'Maior nota: {maior_nota}')
-        print(f'Menor nota: {menor_nota}'
-        print(f'Total de Alunos: {total_alunos}')
-        acertos += 1
-
-
-        # print (resposta)
-        # # print()
-        # print(acertos)
-
-
-
-        # Maior e Menor Acerto;
-        # Total de Alunos que utilizaram o sistema;
-        # A Média das Notas da Turma com uma casa decimal.
+        print(f'Média geral: {media_geral:.2f}')
+        print(f'Maior nota: {nota_minima}')
+        print(f'Menor nota: {nota_maxima}')
+        # print(f'Total de Alunos: {total_alunos}')
