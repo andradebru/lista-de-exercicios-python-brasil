@@ -33,3 +33,4 @@ def calcular_media(*notas) -> float:
 
         media = soma_das_notas / len(notas)
         print(media)
+
