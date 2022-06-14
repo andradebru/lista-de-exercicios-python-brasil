@@ -61,5 +61,5 @@ def listar_numeros_para_avaliacao():
             intervalo = '76 a 100'
     print(f'{qtd_numero_faixa1} número(s) entre o intervalo de {intervalo}')
 
-    if n < 0:
-        return False
+    # if n < 0:
+    #     break

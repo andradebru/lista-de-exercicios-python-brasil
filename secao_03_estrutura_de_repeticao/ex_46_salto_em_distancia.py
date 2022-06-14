@@ -44,27 +44,35 @@ Mostre os valores com uma casa decimal sem arredondar.
     João do Pulo: 6.2 m
 
 """
+import math
 
 
 def calcular_estatiscas_do_salto(nome, *saltos):
     """Escreva aqui em baixo a sua solução"""
-    nome =
-    salto =
-    melhor_salto =
-    pior_salto =
-    media_saltos =
+    melhor_salto = 0
+    pior_salto = 99999999
+
+    for salto in saltos:
+        if salto > melhor_salto:
+            melhor_salto = salto
+        if salto < pior_salto:
+            pior_salto = salto
+
+    saltos_ordenados = sorted(saltos)
+    saltos_medios = saltos_ordenados[1:-1]
+    media_saltos = (sum(saltos_medios) / len(saltos_medios)) #- 0.1 medidas desesperadas
 
     print(f'Atleta: {nome}')
-    print(f'---------------------------------')
-    print(f'Primeiro Salto: {salto} m')
-    print(f'Segundo Salto: {salto} m')
-    print(f'Terceiro Salto: {salto} m')
-    print(f'Quarto Salto: {salto} m')
-    print(f'Quinto Salto: {salto} m')
-    print(f'---------------------------------')
+    print('---------------------------------')
+    print(f'Primeiro Salto: {saltos[0] } m')
+    print(f'Segundo Salto: {saltos[1]} m')
+    print(f'Terceiro Salto: {saltos[2]} m')
+    print(f'Quarto Salto: {saltos[3]} m')
+    print(f'Quinto Salto: {saltos[4]} m')
+    print('---------------------------------')
     print(f'Melhor salto:  {melhor_salto} m')
     print(f'Pior salto: {pior_salto} m')
-    print(f'Média dos demais saltos: {media_saltos} m')
-    print(f'---------------------------------')
-    print(f'Resultado final:')
-    print(f'{nome}: {media_saltos} m')
+    print(f'Média dos demais saltos: {media_saltos:.1f} m')
+    print('---------------------------------')
+    print('Resultado final:')
+    print(f'{nome}: {media_saltos:.1f} m')
