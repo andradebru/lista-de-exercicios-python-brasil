@@ -117,19 +117,33 @@ def fechar_conta(*itens):
     for qtd in itens:
         qtd_final += 1
 
-    for codigo in items:
-        if codigo == 100:
+    for codigo in itens:
+        if codigo == '100':
             valor_total += 1.2
-        if codigo == 101:
+        if codigo == '101':
             valor_total += 1.3
-        if codigo == 102:
+        if codigo == '102':
             valor_total += 1.5
-        if codigo == 103:
+        if codigo == '103':
             valor_total += 1.2
-        if codigo == 104:
+        if codigo == '104':
             valor_total += 1.3
-        if codigo == 105:
+        if codigo == '105':
             valor_total += 1.0
+
+    preco = 0
+    if codigo == '100':
+        preco = 1.2
+    if codigo == '101':
+        preco += 1.3
+    if codigo == '102':
+        preco += 1.5
+    if codigo == '103':
+        preco += 1.2
+    if codigo == '104':
+        preco += 1.3
+    if codigo == '105':
+        preco += 1.0
 
     print('_____________________________________________________________________________')
     print('|                              RESUMO DA CONTA                              |')
