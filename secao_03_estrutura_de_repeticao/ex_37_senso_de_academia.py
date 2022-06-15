@@ -53,36 +53,85 @@ da média das alturas e dos pesos dos clientes
 
 """
 
+"""Escreva aqui em baixo a sua solução"""
+
+
+def descobrir_mais_alto_e_baixo(cadastro):
+    cliente_mais_alto = None
+    cliente_mais_baixo = None
+    maior_altura = None
+    menor_altura = None
+
+    for (nome, altura, peso) in cadastro:
+        if maior_altura is None or altura > maior_altura:
+            cliente_mais_alto = nome
+            maior_altura = altura
+        if menor_altura is None or altura < menor_altura:
+            cliente_mais_baixo = nome
+            menor_altura = altura
+    return cliente_mais_alto, maior_altura, cliente_mais_baixo, menor_altura
+
+
+def descobrir_maior_peso(cadastro):
+    cliente_menor_peso = None
+    cliente_maior_peso = None
+    maior_peso = None
+    menor_peso = None
+
+    for (nome, altura, peso) in cadastro:
+        if menor_peso is None or peso < menor_peso:
+            cliente_menor_peso = nome
+            menor_peso = peso
+        if maior_peso is None or peso > maior_peso:
+            cliente_maior_peso = nome
+            maior_peso = peso
+    return cliente_menor_peso, menor_peso, cliente_maior_peso, maior_peso
+
+
+def descobrir_medias_altura_peso(cadastro):
+    total_altura = 0
+    total_peso = 0
+    for (nome, altura, peso) in cadastro:
+        total_altura += altura
+        total_peso += peso
+
+    total_clientes = len(cadastro)
+    media_altura = total_altura / total_clientes
+    media_peso = total_peso / total_clientes
+    return media_altura, media_peso
+
+
+def obter_input():
+    cadastro = []
+    inputs = []
+    contador = 0
+    while True:
+        entrada = input("")
+        inputs.append(entrada)
+        contador += 1
+        if entrada == '0':
+            break
+        if contador == 3:
+            nome, altura, peso = inputs
+            cadastro.append([nome, int(altura), int(peso)])
+            inputs = []
+            contador = 0
+    return cadastro
+
 
 def rodar_senso():
-    """Escreva aqui em baixo a sua solução"""
-    # cadastro = [
-    #     ["Renzo", "162", 81],
-    #     ['Gigante', 192, 80],
-    #     ['Bolota', 170, 150],
-    #     ['Seco', 172, 50],
-    # ]
-    #
-    # def imprimir(cadastro):
-    #     for (nome, altura, peso) in cadastro:
-    #         print(altura)
-    #
-    # def descobrir_mais_alto_e_baixo(cadastro):
-    #     cliente_mais_alto = 0
-    #     for (nome, altura, peso) in cadastro:
-    #         if altura > cliente_mais_alto:
-    #             cliente_mais_alto = altura
-    #     print(cliente_mais_alto)
-    #
-    # print(f'Cliente mais alto: {cliente_mais_alto}, com {maior_altura} centímetros')
-    # print(f'Cliente mais baixo: {cliente_mais_baixo}, com {menor_altura} centímetros')
-    # print(f'Cliente mais magro: {cliente_menor_magro}, com {menor_peso} kilos')
-    # print(f'Cliente mais gordo: Bolota, {cliente_maior_peso} 150 kilos')
-    # print('--------------------------------------------------')
-    # print(f'Media de altura dos clientes: {media_altura:.1f} centímetros')
-    # print(f'Media de peso dos clientes: {media_peso:.1f} kilos')
+    cadastro = obter_input()
+    resultado = descobrir_mais_alto_e_baixo(cadastro)
+    cliente_mais_alto, maior_altura, cliente_mais_baixo, menor_altura = resultado
+    resultado = descobrir_maior_peso(cadastro)
+    cliente_menor_peso, menor_peso, cliente_maior_peso, maior_peso = resultado
 
-# def imprimir(cadastro):
-#     for (nome, altura, peso) in cadastro:
-#         print(altura)
+    media_altura, media_peso = descobrir_medias_altura_peso(cadastro)
 
+    print(f'Cliente mais alto: {cliente_mais_alto}, com {maior_altura} centímetros')
+    print(f'Cliente mais baixo: {cliente_mais_baixo}, com {menor_altura} centímetros')
+    print(f'Cliente mais magro: {cliente_menor_peso}, com {menor_peso} kilos')
+    print(f'Cliente mais gordo: {cliente_maior_peso}, com {maior_peso} kilos')
+    print('--------------------------------------------------')
+    print(f'Media de altura dos clientes: {media_altura:.1f} centímetros')
+    print(f'Media de peso dos clientes: {media_peso:.1f} kilos')
