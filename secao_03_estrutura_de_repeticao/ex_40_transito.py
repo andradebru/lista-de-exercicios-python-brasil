@@ -36,7 +36,7 @@ def calcular_estatisticas(*cidades):
     numero_acidentes = 0
     numero_veiculos_cidades_menos_150mil = 0
 
-    for cidade in cidades: #percorre lista de tuplas
+    for cidade in cidades:  # percorre lista de tuplas
         qtd_por_1000_veiculos = cidade[2] / (cidade[1] / 1000)
         if qtd_por_1000_veiculos >= maior_acidentes:
             maior_acidentes = qtd_por_1000_veiculos
@@ -45,12 +45,11 @@ def calcular_estatisticas(*cidades):
             menor_acidentes = qtd_por_1000_veiculos
             nome_cidade_menor = cidade[0]
         numero_veiculos += cidade[1]
-        if cidade[2] <= 150_000:
+        if cidade[1] <= 150_000:
             numero_acidentes += cidade[2]
-            numero_veiculos_cidades_menos_150mil += cidade[1]
+            numero_veiculos_cidades_menos_150mil += 1
 
-    media_total = numero_acidentes / numero_veiculos_cidades_menos_150mil
     print(f'O maior índice de acidentes é de {nome_cidade_maior}, com {maior_acidentes:.1f} acidentes por mil carros.')
     print(f'O menor índice de acidentes é de {nome_cidade_menor}, com {menor_acidentes:.1f} acidentes por mil carros.')
     print(f'O média de veículos por cidade é de {int(numero_veiculos / len(cidades))}.')
-    print(f'A média de acidentes total nas cidades com menos de 150 mil carros é de {media_total:.1f} acidentes.')
+    print(f'A média de acidentes total nas cidades com menos de 150 mil carros é de {numero_acidentes/numero_veiculos_cidades_menos_150mil:.1f} acidentes.')

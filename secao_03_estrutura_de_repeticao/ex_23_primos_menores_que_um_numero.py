@@ -40,8 +40,7 @@ Serão avaliados o funcionamento, o estilo e o número de testes (divisões) exe
 """
 from typing import Tuple
 
-
-def calcular_primos_e_divisoes(n: int) -> Tuple[str, int]:
+def eh_primo(n: int) -> bool:
     """Escreva aqui em baixo a sua solução"""
     while n <= 1:
         return False
@@ -54,3 +53,23 @@ def calcular_primos_e_divisoes(n: int) -> Tuple[str, int]:
             return True
     else:
         return True
+
+def imprime_apenas_primos(numero):
+    primos = []
+    for num in range(2, numero + 1):
+        if eh_primo(num):
+            primos.append(str(num))
+    return ", ".join(primos)
+
+def numero_divisoes(numero):
+    divisoes = 0
+    for num in range(2, numero):
+        divisoes += 1
+
+    return divisoes
+
+def calcular_primos_e_divisoes(n: int) -> Tuple[str, int]:
+    """Escreva aqui em baixo a sua solução"""
+    primos = imprime_apenas_primos(n)
+    divisoes = numero_divisoes(n)
+    return (primos, divisoes)

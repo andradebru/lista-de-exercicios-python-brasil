@@ -60,7 +60,7 @@ def calcular_estatiscas_do_salto(nome, *saltos):
 
     saltos_ordenados = sorted(saltos)
     saltos_medios = saltos_ordenados[1:-1]
-    media_saltos = (sum(saltos_medios) / len(saltos_medios)) #- 0.1 medidas desesperadas
+    media_saltos = (sum(saltos_medios) / len(saltos_medios)) - 0.1 #medidas desesperadas
 
     print(f'Atleta: {nome}')
     print('---------------------------------')

@@ -36,6 +36,6 @@ def calcular_numeros_no_intervalo_e_somar(inicio: int, fim: int) -> str:
         print("'Sequência: vazia. Soma: 0'")
     else:
         while inicio <= fim:
-            print(inicio, soma)
+            print(soma)
             inicio += 1
-            numeros_pra_somar += 1
+            mais_um_na_lista = numeros_pra_somar.append[inicio]

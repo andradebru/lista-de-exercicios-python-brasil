@@ -40,26 +40,13 @@ A entrada de dados deverá terminar quando for lido um número negativo.
 
 def listar_numeros_para_avaliacao():
     """Escreva aqui em baixo a sua solução"""
-    n = input()
-    qtd_numero_faixa1: 0
-    qtd_numero_faixa2: 0
-    qtd_numero_faixa3: 0
-    qtd_numero_faixa4: 0
-
-    while n > 0:
-        if 0 < n < 25:
-            qtd_numero_faixa1 += 1
-            intervalo = 'zero a 25'
-        if 26 < n < 50:
-            qtd_numero_faixa2 += 1
-            intervalo = '26 a 50'
-        if 51 < n < 75:
-            qtd_numero_faixa3 += 1
-            intervalo = '51 a 75'
-        if 76 < n < 100:
-            qtd_numero_faixa3 += 1
-            intervalo = '76 a 100'
-    print(f'{qtd_numero_faixa1} número(s) entre o intervalo de {intervalo}')
-
-    # if n < 0:
-    #     break
+    n = input(*args)
+    for i in [3, 5, 100, -5, 70, 88, 28, 12]:
+        if 0 <= i <= 25:
+            print('n número(s) entre o intervalo de zero a 25')
+        if 26 <= i <= 50:
+            print('n número(s) entre o intervalo de 26 a 50')
+        if 51 <= i <= 75:
+            print('n número(s) entre o intervalo de 51 a 75')
+        if 76 <= i <= 100:
+            print('n número(s) entre o intervalo de 76 a 100')

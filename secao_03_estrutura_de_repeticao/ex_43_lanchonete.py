@@ -105,45 +105,93 @@ comprados.
     -----------------------------------------------------------------------------
 
 """
+cardapio = [
+    ("Cachorro Quente", "100", 1.2),
 
+]
+
+def get_preco_produto(codigo):
+    preco = None
+    nome = None
+    for (pnome, pcodigo, ppreco) in cardapio:
+        if codigo == codigo:
+            preco = ppreco
+            nome = pnome
+            break
+    return preco, nome
+
+
+
+def imprimir_pedido(lista):
+    for codigo, qtd in lista:
+        preco, nome = get_preco_produto(codigo)
+        print(nome, "|", preco, "|", codigo, "|")
+
+
+def obter_item_pedido(cod):
+    item = None
+    for item in pedido:
+        nome, codigo, preco, qtd = item
+        if cod == codigo:
+            return item
+            break
+    preco, nome = get_preco_produto(cod)
+    item = [nome, cod, preco, qtd]
+    return item
+
+def fechar_pedido(lista):
+    for codigo, qtd in lista:
+        # preco, nome = get_preco_produto(codigo)
+        item pedido = obter_item_pedido(codigo)
+        qtd_item = item_pedido[3] + qtd
+        valor_item = qtd_item * item_pedido[2]
+
+        item_pedido[3] = qtd_item
+        item_pedido[4] = valor_item
+        pedido.append([nome, codigo, preco, qtd])
 
 def fechar_conta(*itens):
     """Escreva aqui em baixo a sua solução"""
-    codigo = itens[0]
-    qtd = itens[1]
-    qtd_final = 0
-    valor_total = 0
+    pedido = []
 
-    for qtd in itens:
-        qtd_final += 1
 
-    for codigo in itens:
-        if codigo == '100':
-            valor_total += 1.2
-        if codigo == '101':
-            valor_total += 1.3
-        if codigo == '102':
-            valor_total += 1.5
-        if codigo == '103':
-            valor_total += 1.2
-        if codigo == '104':
-            valor_total += 1.3
-        if codigo == '105':
-            valor_total += 1.0
-
-    preco = 0
-    if codigo == '100':
-        preco = 1.2
-    if codigo == '101':
-        preco += 1.3
-    if codigo == '102':
-        preco += 1.5
-    if codigo == '103':
-        preco += 1.2
-    if codigo == '104':
-        preco += 1.3
-    if codigo == '105':
-        preco += 1.0
+    # codigo = itens[0]
+    # qtd = itens[1]
+    # qtd_final = 0
+    # valor_total = 0
+    #
+    # for
+    #
+    # for qtd in itens:
+    #     qtd_final += 1
+    #
+    # for codigo in itens:
+    #     if codigo == '100':
+    #         valor_total += 1.2
+    #     if codigo == '101':
+    #         valor_total += 1.3
+    #     if codigo == '102':
+    #         valor_total += 1.5
+    #     if codigo == '103':
+    #         valor_total += 1.2
+    #     if codigo == '104':
+    #         valor_total += 1.3
+    #     if codigo == '105':
+    #         valor_total += 1.0
+    #
+    # preco = 0
+    # if codigo == '100':
+    #     preco = 1.2
+    # if codigo == '101':
+    #     preco += 1.3
+    # if codigo == '102':
+    #     preco += 1.5
+    # if codigo == '103':
+    #     preco += 1.2
+    # if codigo == '104':
+    #     preco += 1.3
+    # if codigo == '105':
+    #     preco += 1.0
 
     print('_____________________________________________________________________________')
     print('|                              RESUMO DA CONTA                              |')
