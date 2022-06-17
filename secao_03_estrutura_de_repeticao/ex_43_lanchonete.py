@@ -110,6 +110,7 @@ cardapio = [
 
 ]
 
+
 def get_preco_produto(codigo):
     preco = None
     nome = None
@@ -119,7 +120,6 @@ def get_preco_produto(codigo):
             nome = pnome
             break
     return preco, nome
-
 
 
 def imprimir_pedido(lista):
@@ -139,10 +139,11 @@ def obter_item_pedido(cod):
     item = [nome, cod, preco, qtd]
     return item
 
+
 def fechar_pedido(lista):
     for codigo, qtd in lista:
         # preco, nome = get_preco_produto(codigo)
-        item pedido = obter_item_pedido(codigo)
+        item_pedido = obter_item_pedido(codigo)
         qtd_item = item_pedido[3] + qtd
         valor_item = qtd_item * item_pedido[2]
 
@@ -150,10 +151,10 @@ def fechar_pedido(lista):
         item_pedido[4] = valor_item
         pedido.append([nome, codigo, preco, qtd])
 
+
 def fechar_conta(*itens):
     """Escreva aqui em baixo a sua solução"""
     pedido = []
-
 
     # codigo = itens[0]
     # qtd = itens[1]
