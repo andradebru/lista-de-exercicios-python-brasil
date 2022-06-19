@@ -27,22 +27,21 @@ Os valores devem ser exibidos com duas casas decimais
     
 """
 
+
 # Esse funcionário foi contratado em 2018;
 # 2) Em 2019 recebeu aumento de 1,5% sobre seu salário inicial;
 # 3) A partir de 2020 (inclusive), os aumentos salariais sempre correspondem ao dobro do percentual do ano anterior.
 # Faça um programa que determine a evolução salarial do funcionário em 5 anos
 def calcular_salarios_anuais(salario: float):
     """Escreva aqui em baixo a sua solução"""
-
     print(f'Salário em 2018: R$ {salario:.2f}')
     ano = 2019
-
+    percentual_inicial = 0.0015
+    salario_inicial = salario
     for ano in range(2018, 2023):
-        percentual_inicial = 0.0015
-        percentual_aumento = percentual_inicial * 2
-        aumento = salario * percentual_aumento
-        salario = salario + aumento
+        salario = salario + salario * percentual_inicial * 10
+        porcentagem_aumento = salario * 100 / salario_inicial
         ano += 1
-        percentual_inicial = percentual_aumento
-        print(f'Salário em {ano}: R$ {salario:.2f}. Aumento porcentual: {aumento:.2f}%')
-
+        percentual_inicial *= 2
+        salario_inicial = salario
+        print(f'Salário em {ano}: R$ {salario:.2f}. Aumento porcentual: {porcentagem_aumento:.2f}%')
