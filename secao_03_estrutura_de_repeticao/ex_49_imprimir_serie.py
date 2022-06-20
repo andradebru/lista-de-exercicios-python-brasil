@@ -44,7 +44,7 @@ def imprimir_serie(n):
         # numeros_em_sequencia = n + 1
         numeros_impares = n + 2
     print(1)
-    for j in range(1, n+1):
+    for j in range(1, n+1, 2):
         j = j + 2
         print(j)
     # print(f'S = {numeros_em_sequencia}/{numeros_impares} + 2/3 + 3/5 + 4/7 + 5/9 + 6/11 + 7/13 + 8/15 + 9/17')

@@ -23,14 +23,12 @@ def calcular_media(*notas) -> float:
     if len(notas) == 0:
         print("'É necessária ao menos uma nota para calcular a média'")
     else:
-        # # media = numpy.mean(notas)
-        # # print(media)
-        # media = sum(notas) / len(notas)
-        # print(int(media))
         soma_das_notas = 0
         for nota in notas:
             soma_das_notas += nota
 
         media = soma_das_notas / len(notas)
-        print(media)
-
+        if media == 1 or media % 2 == 0:
+            print(f'{media:.0f}')
+        else:
+            print(media)
