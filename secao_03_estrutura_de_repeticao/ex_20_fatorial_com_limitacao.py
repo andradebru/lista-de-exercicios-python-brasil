@@ -46,3 +46,4 @@ def calcular_fatorial(n: int) -> int:
             print(f"'Apenas valores positivos, inteiros e menores que 16 são válidos. Não é possível calcular para {n}'")
 
         # nao to sabendo como deixar so o ultimo numero no print ?
+        # e se eu botar td numa lisat e imprimir so o ultimo
