@@ -28,9 +28,13 @@ def calcular_fatorial(n: int):
     """Escreva aqui em baixo a sua solução"""
     resultado = 1
     contador = 1
+    str_resultado = ''
 
     while contador <= n:
+        str_resultado += str(contador) + ' . '
         resultado *= contador
         contador += 1
+    str_resultado = str_resultado[:-3]
+    str_resultado = str_resultado[::-1]
 
-    print(f'Fatorial de {n}:\n{n}! = {n} . {n-1} . {n-2} . {n-3} = {resultado}')
+    print(f'Fatorial de {n}:\n{n}! = {str_resultado} = {resultado}')
