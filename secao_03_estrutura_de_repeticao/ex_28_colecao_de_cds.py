@@ -38,30 +38,15 @@ Mostre os valores monetórios com duas casas decimais..
 
 def calcular_estatisticas_colecao_de_cd():
     """Escreva aqui em baixo a sua solução"""
-    entradas = ['10', '20', '30', '3']
-    entradas_int = []
-    for elemento in entradas: #transforma as strings em inteiro e joga na lista vazia criada pra isso
-        entradas_int.append(int(elemento))
+    numero_cds = int(input('digite a quantidade de cds: '))  # o primeiro input sempre sera a qtd de cds
+    lista_precos = []
+    for i in range(1, numero_cds + 1):
+        preco = int(input('digite o preco: '))
+        lista_precos.append(preco)
 
-    numero_cds = entradas_int[-1]
-    print(f'Número de cds: {numero_cds}')
-    valor_total = sum(entradas_int) - entradas_int[-1]
-    print(f'Valor total da coleção: R$ {valor_total:.2f}')
+    valor_total = sum(lista_precos)
     custo_medio = valor_total / numero_cds
+
+    print(f'Número de cds: {numero_cds}')
+    print(f'Valor total da coleção: R$ {valor_total:.2f}')
     print(f'Custo médio dos cds: R$ {custo_medio:.2f}')
-
-
-    # lista = []
-    # entradas = input('digite')
-    # while True:
-    #     lista.append(entradas)
-    #     entradas = input('digite')
-    #     break
-    #
-    # numero_cds = int(lista[-1])
-    # valor_total = sum(lista) #menos o ultimo numero q eh a qtdd
-    # custo_medio = valor_total / (len(lista) - 1)
-    #
-    # print(f'Número de cds: {numero_cds}')
-    # print(f'Valor total da coleção: R$ {valor_total:.2f}')
-    # print(f'Custo médio dos cds: R$ {custo_medio:.2f}')
