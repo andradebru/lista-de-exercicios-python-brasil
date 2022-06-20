@@ -29,10 +29,7 @@ def calcular_numeros_no_intervalo_e_somar(inicio: int, fim: int) -> str:
             numeros_pra_somar.append(i)
     for numero in numeros_pra_somar:
         resultado += str(numero) + ', '
-        # if i != len(numeros_pra_somar):
-        #     resultado += ', '
 
-    # resultado = ''.join(map(str, numeros_pra_somar))
     soma = sum(numeros_pra_somar)
     resultado = resultado[:-2]
     resultado += ". Soma: " + str(soma) + "'"
