@@ -40,7 +40,12 @@ def calcular_salarios_anuais(salario: float):
     salario_inicial = salario
     for ano in range(2018, 2023):
         salario = salario + salario * percentual_inicial
-        porcentagem_aumento = (salario * 100 / salario_inicial) % 10
+        coeficiente = salario * 100 / salario_inicial
+        if coeficiente % 100 > 10:
+            porcentagem_aumento = coeficiente % 100
+        else:
+            porcentagem_aumento = coeficiente % 10
+
         ano += 1
         percentual_inicial *= 2
         salario_inicial = salario
