@@ -53,36 +53,30 @@ para registrar a próxima compra.
 
 """
 
-def printa_compra(total, dinheiro, troco):
-    print('Lojas Tabajara')
-    print(f'Total     : R$   {total:.2f}')
-    print(f'Dinheiro  : R$   {dinheiro:.2f}')
-    print(f'Troco     : R$   {troco:.2f}')
-    print('-------------------')
-    print('Programa encerrado!')
 
 def rodar_programa_de_caixa():
     """Escreva aqui em baixo a sua solução"""
     lista_produtos = []
-    dinheiro = 0
+    nota_dinheiro = 0
     total = 0
 
-    while True:
-        produto = input('Digite: ')
-        lista_produtos.append(produto)
+    # printa cabecalho
+    print('Lojas Tabajara')
 
-        if produto == '-1' and len(lista_produtos) == 0:
-            print('Lojas Tabajara')
-            print('-------------------')
-            print('Programa encerrado!')
-            break
+    input_1 = input('Digite')
 
-        if produto == '0' or produto == '-1':
-            dinheiro = input()
-            break
+    while input_1 != '-1' and input_1 != '0':
+        lista_produtos.append(float(input_1))
+        total = sum(lista_produtos)
+        input_1 = input('Digite')
+        if input_1 == '0' or input_1 == '-1':
+            nota_dinheiro = float(input('Digite a nota: '))
+            troco = float(nota_dinheiro) - total
+            print(f'Total     : R$   {total:.2f}')
+            print(f'Dinheiro  : R$   {nota_dinheiro:.2f}')
+            print(f'Troco     : R$   {troco:.2f}')
+            # if input_1 is not None:
+            #     print('Lojas Tabajara')
 
-    for produto in lista_produtos:
-        total += produto
-
-    troco = dinheiro - total
-    printa_compra(total, dinheiro, troco)
+    print('-------------------')
+    print('Programa encerrado!')

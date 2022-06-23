@@ -105,100 +105,55 @@ comprados.
     -----------------------------------------------------------------------------
 
 """
-cardapio = [
-    ("Cachorro Quente", "100", 1.2),
-
-]
 
 
-def get_preco_produto(codigo):
-    preco = None
-    nome = None
-    for (pnome, pcodigo, ppreco) in cardapio:
-        if codigo == codigo:
-            preco = ppreco
-            nome = pnome
-            break
-    return preco, nome
-
-
-def imprimir_pedido(lista):
-    for codigo, qtd in lista:
-        preco, nome = get_preco_produto(codigo)
-        print(nome, "|", preco, "|", codigo, "|")
-
-
-def obter_item_pedido(cod):
-    item = None
-    for item in pedido:
-        nome, codigo, preco, qtd = item
-        if cod == codigo:
-            return item
-            break
-    preco, nome = get_preco_produto(cod)
-    item = [nome, cod, preco, qtd]
-    return item
-
-
-def fechar_pedido(lista):
-    for codigo, qtd in lista:
-        # preco, nome = get_preco_produto(codigo)
-        item_pedido = obter_item_pedido(codigo)
-        qtd_item = item_pedido[3] + qtd
-        valor_item = qtd_item * item_pedido[2]
-
-        item_pedido[3] = qtd_item
-        item_pedido[4] = valor_item
-        pedido.append([nome, codigo, preco, qtd])
-
-
-def fechar_conta(*itens):
-    """Escreva aqui em baixo a sua solução"""
-    pedido = []
-
-    codigo = itens[0]
-    qtd = itens[1]
-    qtd_final = 0
-    valor_total = 0
-
-    for
-
-    for qtd in itens:
-        qtd_final += 1
-
-    for codigo in itens:
-        if codigo == '100':
-            valor_total += 1.2
-        if codigo == '101':
-            valor_total += 1.3
-        if codigo == '102':
-            valor_total += 1.5
-        if codigo == '103':
-            valor_total += 1.2
-        if codigo == '104':
-            valor_total += 1.3
-        if codigo == '105':
-            valor_total += 1.0
-
-    preco = 0
-    if codigo == '100':
-        preco = 1.2
-    if codigo == '101':
-        preco += 1.3
-    if codigo == '102':
-        preco += 1.5
-    if codigo == '103':
-        preco += 1.2
-    if codigo == '104':
-        preco += 1.3
-    if codigo == '105':
-        preco += 1.0
-
+def imprimir_cabecalho():
     print('_____________________________________________________________________________')
     print('|                              RESUMO DA CONTA                              |')
     print('|---------------------------------------------------------------------------|')
     print('| Epecificação     | Código | Preço Unitário (R$) | Quantidade | Total (R$) |')
-    print(f'| Cachorro Quente  | {codigo}    | 1.20                |          {qtd} |       {preco:.2f} |')
+
+
+def fechar_conta(*itens):
+    """Escreva aqui em baixo a sua solução"""
+    cardapio = {
+        '100': ('Cachorro Quente', '1.20'),
+        '101': ('Bauru Simples', '1.30'),
+        '102': ('Bauru com Ovo', '1.50'),
+        '103': ('Hamburger', '1.20'),
+        '104': ('Cheeseburger', '1.30'),
+        '105': ('Refrigerante', '1.00')
+    }
+
+    pedido = []
+    total_produto = 0
+    qtd_final = 0
+    valor_total = 0
+    soma_novo = 0
+
+    for (codigo, quantidade) in itens:
+        produto, valor = cardapio[codigo]
+        item_atual = [produto, codigo, valor, int(quantidade), int(quantidade) * float(valor)]
+        item_novo = True
+
+        for item in pedido:
+            if item[1] == codigo:
+                item[3] += int(quantidade)
+                item[4] += int(quantidade) * float(valor)
+                item_atual = item
+                item_novo = False
+                soma_novo += int(quantidade)
+        if item_novo:
+            pedido.append(item_atual)
+
+    imprimir_cabecalho()
+
+    for (produto, codigo, valor, quantidade, total_produto) in pedido:
+        qtd_final += quantidade
+        valor_total += total_produto
+        print(f'| {produto}'.ljust(18),
+              f'| {codigo}'.ljust(7), f' | {valor}'.ljust(22), f'| {quantidade:10.0f} | {total_produto:10.2f} |')
+
     print('|---------------------------------------------------------------------------|')
-    print(f'| Total Geral:                                    |          {qtd_final} |       {valor_total:.2f} |')
-    print('_____________________________________________________________________________')
+    print(f'| Total Geral:                                    | {qtd_final:10} |'.ljust(63), f'{valor_total:10.2f} |')
+    print('-----------------------------------------------------------------------------')
