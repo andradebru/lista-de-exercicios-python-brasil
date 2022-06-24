@@ -50,37 +50,6 @@ até R$ 99999,99
 
 """
 
-def espaco_branco(valor):
-    espaco = ''
-    for i in range (9 - len(valor)):
-        espaco += ' '
-    return espaco
 
 def calcular_salario_liquido(valor_hora: float, horas_trabalhadas: int):
     """Escreva aqui em baixo a sua solução"""
-    salario_bruto = valor_hora * horas_trabalhadas
-    total_descontos = 0
-    desconto_ir = 0
-    desconto_inss = salario_bruto * 0.1
-    desconto_sind = salario_bruto * 0.03
-    valor_fgts = salario_bruto * 0.11 
-
-    if salario_bruto < 900:
-      total_descontos = desconto_inss + desconto_ir + desconto_sind
-      salario_liquido = salario_bruto - total_descontos
-      print(f'Salário Bruto: (R$ {valor_hora:.2f} * {horas_trabalhadas})     : R${espaco_branco(str(f"{salario_bruto:.2f}"))}{salario_bruto:.2f}\n(-) IR (0%)                        : R${espaco_branco(str(f"{desconto_ir:.2f}"))}{desconto_ir:.2f}\n(-) INSS (10%)                     : R${espaco_branco(str(f"{desconto_inss:.2f}"))}{desconto_inss:.2f}\n(-) Sindicato (3%)                 : R${espaco_branco(str(f"{desconto_sind:.2f}"))}{desconto_sind:.2f}\nFGTS (11%)                         : R${espaco_branco(str(f"{valor_fgts:.2f}"))}{valor_fgts:.2f}\nTotal de descontos                 : R${espaco_branco(str(f"{total_descontos:.2f}"))}{total_descontos:.2f}\nSalário Liquido                    : R${espaco_branco(str(f"{salario_liquido:.2f}"))}{salario_liquido:.2f}')
-    elif 900 <= salario_bruto < 1500:
-      desconto_ir = salario_bruto * 0.05
-      total_descontos = desconto_inss + desconto_ir + desconto_sind
-      salario_liquido = salario_bruto - total_descontos
-      print(f'Salário Bruto: (R$ {valor_hora:.2f} * {horas_trabalhadas})     : R${espaco_branco(str(f"{salario_bruto:.2f}"))}{salario_bruto:.2f}\n(-) IR (5%)                        : R${espaco_branco(str(f"{desconto_ir:.2f}"))}{desconto_ir:.2f}\n(-) INSS (10%)                     : R${espaco_branco(str(f"{desconto_inss:.2f}"))}{desconto_inss:.2f}\n(-) Sindicato (3%)                 : R${espaco_branco(str(f"{desconto_sind:.2f}"))}{desconto_sind:.2f}\nFGTS (11%)                         : R${espaco_branco(str(f"{valor_fgts:.2f}"))}{valor_fgts:.2f}\nTotal de descontos                 : R${espaco_branco(str(f"{total_descontos:.2f}"))}{total_descontos:.2f}\nSalário Liquido                    : R${espaco_branco(str(f"{salario_liquido:.2f}"))}{salario_liquido:.2f}')
-    elif 1500 <= salario_bruto < 2500:
-      desconto_ir = salario_bruto * 0.1
-      total_descontos = desconto_inss + desconto_ir + desconto_sind
-      salario_liquido = salario_bruto - total_descontos
-      print(f'Salário Bruto: (R$ {valor_hora:.2f} * {horas_trabalhadas})    : R${espaco_branco(str(f"{salario_bruto:.2f}"))}{salario_bruto:.2f}\n(-) IR (10%)                       : R${espaco_branco(str(f"{desconto_ir:.2f}"))}{desconto_ir:.2f}\n(-) INSS (10%)                     : R${espaco_branco(str(f"{desconto_inss:.2f}"))}{desconto_inss:.2f}\n(-) Sindicato (3%)                 : R${espaco_branco(str(f"{desconto_sind:.2f}"))}{desconto_sind:.2f}\nFGTS (11%)                         : R${espaco_branco(str(f"{valor_fgts:.2f}"))}{valor_fgts:.2f}\nTotal de descontos                 : R${espaco_branco(str(f"{total_descontos:.2f}"))}{total_descontos:.2f}\nSalário Liquido                    : R${espaco_branco(str(f"{salario_liquido:.2f}"))}{salario_liquido:.2f}')
-    else:
-      desconto_ir = salario_bruto * 0.2
-      total_descontos = desconto_inss + desconto_ir + desconto_sind
-      salario_liquido = salario_bruto - total_descontos
-      print(f'Salário Bruto: (R$ {valor_hora:.2f} * {horas_trabalhadas})   : R${espaco_branco(str(f"{salario_bruto:.2f}"))}{salario_bruto:.2f}\n(-) IR (20%)                       : R$  {desconto_ir:.2f}\n(-) INSS (10%)                     : R$  {desconto_inss:.2f}\n(-) Sindicato (3%)                 : R$   {desconto_sind:.2f}\nFGTS (11%)                         : R${espaco_branco(str(f"{valor_fgts:.2f}"))}{valor_fgts:.2f}\nTotal de descontos                 : R$  {total_descontos:.2f}\nSalário Liquido                    : R${espaco_branco(str(f"{salario_liquido:.2f}"))}{salario_liquido:.2f}')

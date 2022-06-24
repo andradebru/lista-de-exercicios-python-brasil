@@ -19,7 +19,3 @@ def maior_de_dois_numeros(x, y):
     """Escreva aqui em baixo a sua solução""" 
     # numero_1 = input('numero 1: ')
     # numero_2 = input('numero 2: ')  
-    if x > y:
-        print(x)
-    else:
-        print(y)

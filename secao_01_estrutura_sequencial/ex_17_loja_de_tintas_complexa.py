@@ -63,7 +63,3 @@ def calcular_latas_e_preco_de_tinta():
     # qtd latas * litros lata % litros necessarios
     valor_total = valor_latas + valor_com_galoes
     print(f'Para menor custo, você pode comprar {round(numero_latas)} lata(s) de 18 litros e {round(numero_galoes)} galão(ões) de 3.6 litros a um custo de R$ {valor_total}. Vão sobrar {sobra_tinta_mista:.1f} litro(s) de tinta.')
-
-#     Você pode comprar 3 lata(s) de 18 litros a um custo de R$ 240. Vão sobrar 17.0 litro(s) de tinta.
-#     Você pode comprar 11 lata(s) de 3.6 litros a um custo de R$ 275. Vão sobrar 2.6 litro(s) de tinta.
-#     Para menor custo, você pode comprar 2 lata(s) de 18 litros e 1 galão(ões) de 3.6 litros a um custo de R$ 185. Vão sobrar 2.6 litro(s) de tinta.

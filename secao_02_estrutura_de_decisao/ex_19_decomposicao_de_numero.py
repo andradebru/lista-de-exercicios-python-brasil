@@ -48,60 +48,7 @@ Observando os termos no plural a colocação do "e", da vírgula entre outros. E
     '7 = 7 unidades'
 
 """
-from os import uname_result
 
-def trata_string(numero, unidade):
-    retorno = ''
-    if numero == 1:
-        retorno = f'1 {unidade}'
-    elif numero > 1:
-        retorno = f'{numero} {unidade}s'
-    return retorno
 
 def decompor_numero(numero: int):
     """Escreva aqui em baixo a sua solução"""
-    if numero > 999:
-        print("'O número precisa ser menor que 1000'")
-        return
-    if numero < 0:
-        print("'O número precisa ser positivo'")
-        return
-
-    centenas_str = ''
-    dezenas_str = ''
-    unidades_str = ''
-
-    pos_nums = []
-    num = numero
-    while num != 0:
-        pos_nums.append(num % 10)
-        num = num // 10
-
-    if pos_nums[0] > 0:
-        num = pos_nums[0]
-        unidades_str = trata_string(num,'unidade')
-    if len(pos_nums)>1 and pos_nums[1] > 0:
-        num = pos_nums[1]
-        dezenas_str = trata_string(num,'dezena')
-    if len(pos_nums)>2 and pos_nums[2] > 0:
-        num = pos_nums[2]
-        centenas_str = trata_string(num,'centena')
-
-    result_array = []
-    result_string = ''
-
-    if (centenas_str):
-        result_array.append(centenas_str)
-    if (dezenas_str):
-        result_array.append(dezenas_str)
-    if (unidades_str):
-        result_array.append(unidades_str)
-
-    if len(result_array) == 1:
-        result_string = f"{numero} = {result_array[0]}"
-    if 1 < len(result_array) < 3:
-        result_string = f"{numero} = {result_array[0]} e {result_array[1]}"
-    if len(result_array) == 3:
-        result_string = f"{numero} = {result_array[0]}, {result_array[1]} e {result_array[2]}"
-
-    print(f"'{result_string}'")
