@@ -38,17 +38,22 @@ Faça um programa que mostre os n termos da Série a seguir:
 def imprimir_serie(n):
     """Escreva aqui em baixo a sua solução"""
     # numeros_em_sequencia = 1 (i)
-    passo_1 = []  # numeros em sequencia, passo 1
-    passo_2 = []  # passo 2
+    numeros_em_sequencia = []
+    numeros_x = []
+    # soma = sum()
 
     for i in range(1, n+1):
-        print(i, end='')
-        passo_1.append(i)
+        print(i, end=', ')
+        numeros_em_sequencia.append(i)
 
-    for j in range(1, n+1, 2):
-        j
+    for x in range(1, n+1):
+        print((x * 2) - 1, end=', ')
+        numeros_x.append(x)
 
-    # print(f'S = {numeros_em_sequencia}/{numeros_impares} + 2/3 + 3/5 + 4/7 + 5/9 + 6/11 + 7/13 + 8/15 + 9/17')
+    for item in zip(numeros_em_sequencia, numeros_x):
+        print(item)
+
+    print(f'S = {numeros_em_sequencia}/{numeros_x}')
     # print(f'soma = {soma}')
 
     # nao sei o que eu to fazendo
