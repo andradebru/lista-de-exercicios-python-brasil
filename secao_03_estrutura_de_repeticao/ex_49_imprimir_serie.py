@@ -37,35 +37,13 @@ Faça um programa que mostre os n termos da Série a seguir:
 
 def imprimir_serie(n):
     """Escreva aqui em baixo a sua solução"""
-    # numeros_em_sequencia = 1 (i)
-    numeros_em_sequencia = []
-    numeros_x = []
-    # soma = sum()
+    fracoes = [1]
+    resultado = 'S = 1/1 + '
 
-    for i in range(1, n+1):
-        print(i, end=', ')
-        numeros_em_sequencia.append(i)
-
-    for x in range(1, n+1):
-        print((x * 2) - 1, end=', ')
-        numeros_x.append(x)
-
-    for item in zip(numeros_em_sequencia, numeros_x):
-        print(item)
-
-    print(f'S = {numeros_em_sequencia}/{numeros_x}')
-    # print(f'soma = {soma}')
-
-    # nao sei o que eu to fazendo
-    # saida = 'S = '
-    # saida = ''
-    # soma = 0
-    # for numerador, denominador in zip(range(1, n+1)), range(1, 2*(n+1), 2):
-    #     saida += f'{numerador}/{denominador} +'
-    #     soma += numerador / denominador
-    # saida = saida[:-3]
-    # print(f'S = 1/1 + 2/3 + 3/5 + 4/7 + 5/9 + 6/11 + 7/13 + 8/15 + 9/17')
-    # print(f'soma = {soma}')
-
-
-    # zip?
+    for n in range(2, n+1):
+        fracoes.append(n/(2*n-1))
+        resultado += str(n) + '/' + str(2*n-1) + ' + '
+    resultado = resultado[:-3]
+    soma = sum(fracoes)
+    print(resultado)
+    print(f'soma = {soma}')
