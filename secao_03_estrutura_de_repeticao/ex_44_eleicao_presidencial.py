@@ -21,64 +21,64 @@ A percentagem de votos em branco sobre o total de votos. Para finalizar o conjun
 
     >>> apurar_votos('1')
     Código do Candidato Nome do Candidato Votos Porcentagem sobre total
-    1                   Bostonaro         1     100.0%
-    2                   Luladrão          0       0.0%
-    3                   Dilmanta          0       0.0%
-    4                   FHC Isentão       0       0.0%
+    1                   Lula              0       0.0%
+    2                   Dilma             0       0.0%
+    3                   FHC               0       0.0%
+    4                   Boulos            1     100.0%
     -------------------------------------------------------------------
     5                   Votos Nulos       0       0.0%
     6                   Votos Brancos     0       0.0%
     >>> apurar_votos('1', '2')
     Código do Candidato Nome do Candidato Votos Porcentagem sobre total
-    1                   Bostonaro         1      50.0%
-    2                   Luladrão          1      50.0%
-    3                   Dilmanta          0       0.0%
-    4                   FHC Isentão       0       0.0%
+    1                   Lula              1      50.0%
+    2                   Dilma             0       0.0%
+    3                   FHC               0       0.0%
+    4                   Boulos            1      50.0%
     -------------------------------------------------------------------
     5                   Votos Nulos       0       0.0%
     6                   Votos Brancos     0       0.0%
     >>> apurar_votos('1', '2', '3')
     Código do Candidato Nome do Candidato Votos Porcentagem sobre total
-    1                   Bostonaro         1      33.3%
-    2                   Luladrão          1      33.3%
-    3                   Dilmanta          1      33.3%
-    4                   FHC Isentão       0       0.0%
+    1                   Lula              1      33.3%
+    2                   Dilma             1      33.3%
+    3                   FHC               0       0.0%
+    4                   Boulos            1      33.3%
     -------------------------------------------------------------------
     5                   Votos Nulos       0       0.0%
     6                   Votos Brancos     0       0.0%
     >>> apurar_votos('1', '2', '3', '4')
     Código do Candidato Nome do Candidato Votos Porcentagem sobre total
-    1                   Bostonaro         1      25.0%
-    2                   Luladrão          1      25.0%
-    3                   Dilmanta          1      25.0%
-    4                   FHC Isentão       1      25.0%
+    1                   Lula              1      25.0%
+    2                   Dilma             1      25.0%
+    3                   FHC               1      25.0%
+    4                   Boulos            1      25.0%
     -------------------------------------------------------------------
     5                   Votos Nulos       0       0.0%
     6                   Votos Brancos     0       0.0%
     >>> apurar_votos('1', '2', '3', '4', '5')
     Código do Candidato Nome do Candidato Votos Porcentagem sobre total
-    1                   Bostonaro         1      20.0%
-    2                   Luladrão          1      20.0%
-    3                   Dilmanta          1      20.0%
-    4                   FHC Isentão       1      20.0%
+    1                   Lula              1      20.0%
+    2                   Dilma             1      20.0%
+    3                   FHC               1      20.0%
+    4                   Boulos            1      20.0%
     -------------------------------------------------------------------
     5                   Votos Nulos       1      20.0%
     6                   Votos Brancos     0       0.0%
     >>> apurar_votos('1', '2', '3', '4', '5', '6')
     Código do Candidato Nome do Candidato Votos Porcentagem sobre total
-    1                   Bostonaro         1      16.7%
-    2                   Luladrão          1      16.7%
-    3                   Dilmanta          1      16.7%
-    4                   FHC Isentão       1      16.7%
+    1                   Lula              1      16.7%
+    2                   Dilma             1      16.7%
+    3                   FHC               1      16.7%
+    4                   Boulos            1      16.7%
     -------------------------------------------------------------------
     5                   Votos Nulos       1      16.7%
     6                   Votos Brancos     1      16.7%
     >>> apurar_votos('1', '2', '3', '4', '5', '6', '5', '6', '5', '6', '5', '6', '5', '6', '5', '6', '5', '6')
     Código do Candidato Nome do Candidato Votos Porcentagem sobre total
-    1                   Bostonaro         1       5.6%
-    2                   Luladrão          1       5.6%
-    3                   Dilmanta          1       5.6%
-    4                   FHC Isentão       1       5.6%
+    1                   Lula              1       5.6%
+    2                   Dilma             1       5.6%
+    3                   FHC               1       5.6%
+    4                   Boulos            1       5.6%
     -------------------------------------------------------------------
     5                   Votos Nulos       7      38.9%
     6                   Votos Brancos     7      38.9%
